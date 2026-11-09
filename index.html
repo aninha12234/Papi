@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffeaf2">
+  <title>Uma cartinha para meu papai ♡</title>
+  <style>
+    :root { --pink:#f8dce8; --deep:#a95f7c; --ink:#765064; --paper:#fffafd; }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; min-height:100vh; padding:28px 16px;
+      display:grid; place-items:center;
+      background:
+        radial-gradient(circle at 12px 12px, rgba(255,255,255,.7) 0 5px, transparent 6px) 0 0/42px 42px,
+        #ffeaf2;
+      color:var(--ink); font-family: Georgia, "Times New Roman", serif;
+    }
+    .page { width:min(100%, 560px); }
+    .card {
+      overflow:hidden; border:2px solid #edc4d5; border-radius:25px;
+      background:rgba(255,250,253,.96);
+      box-shadow:0 14px 38px rgba(151,83,113,.14);
+    }
+    .art { display:block; width:100%; height:auto; }
+    .inside { padding:25px clamp(20px,6vw,38px) 30px; text-align:center; }
+    .eyebrow { margin:0 0 7px; color:#bd7894; font-size:13px; letter-spacing:2px; }
+    h1 { margin:0; color:var(--deep); font-size:clamp(27px,7vw,36px); font-weight:normal; }
+    .subtitle { margin:9px 0 23px; color:#bd829b; font-size:15px; }
+    .bow { color:#d78eaa; font-size:23px; margin:5px 0 17px; }
+    button {
+      border:0; border-radius:999px; padding:14px 25px; cursor:pointer;
+      background:#e99fbd; color:white; font: bold 15px Georgia,serif;
+      box-shadow:0 5px 0 #d47f9f; transition:transform .18s, box-shadow .18s;
+    }
+    button:hover { transform:translateY(-2px); box-shadow:0 7px 0 #d47f9f; }
+    button:active { transform:translateY(2px); box-shadow:0 3px 0 #d47f9f; }
+    .letter { display:none; text-align:left; margin-top:25px; padding:23px 21px;
+      border:1px dashed #e5aec5; border-radius:18px; background:#fff7fb;
+      line-height:1.85; font-size:17px; animation:appear .55s ease both; }
+    .letter.open { display:block; }
+    .letter p { margin:0 0 16px; }
+    .sign { text-align:right; color:var(--deep); margin-top:22px!important; }
+    .footer { text-align:center; color:#c18aa2; font-size:12px; margin:20px 0 0; }
+    @keyframes appear { from {opacity:0; transform:translateY(10px)} to {opacity:1; transform:translateY(0)} }
+    @media (prefers-reduced-motion: reduce) { * { animation:none!important; transition:none!important; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <img class="art" src="assets/ilustracao.jpg" alt="Ilustração rosa da Hello Kitty e do Pompompurin com flores">
+      <div class="inside">
+        <p class="eyebrow">UM PRESENTINHO FEITO COM CARINHO</p>
+        <h1>Para meu papai ♡</h1>
+        <p class="subtitle">(⁠≧⁠▽⁠≦⁠) tem uma cartinha esperando por você...</p>
+        <div class="bow">୨୧</div>
+        <button id="openBtn" type="button" aria-expanded="false" aria-controls="letter">Abrir meu presentinho ♡</button>
+
+        <article class="letter" id="letter">
+          <p>Queria te dar um pedacinho do meu carinho em forma de palavras...</p>
+          <p>Nunca conheci alguém como você, alguém que me fizesse sentir assim, tão segura, acolhida e protegida acima de tudo.</p>
+          <p>Seus abraços são como cobertores quentinhos que me envolvem, e o carinho que você faz na minha cabeça me deixa tão boba e alegre... Amo como você fica preocupado comigo, como se importa com meu bem-estar e faz de tudo para me ver bem.</p>
+          <p>Gosto de saber que posso encontrar esse aconchego em você, de poder receber seu carinho e me sentir pequenininha nos seus braços. São coisas que talvez pareçam simples, mas significam muito para mim.</p>
+          <p>Espero conseguir demonstrar o quanto gosto de você e o quanto cada um desses gestos me faz feliz. Queria que você pudesse sentir um pouquinho de todo o carinho que tenho guardadinho aqui...</p>
+          <p class="sign">Com muito amor,<br>sua pequena ♡</p>
+        </article>
+        <p class="footer">feito com carinho, especialmente para você ♡</p>
+      </div>
+    </section>
+  </main>
+  <script>
+    const button = document.getElementById('openBtn');
+    const letter = document.getElementById('letter');
+    button.addEventListener('click', () => {
+      const opened = letter.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(opened));
+      button.textContent = opened ? 'Fechar cartinha ♡' : 'Abrir meu presentinho ♡';
+      if (opened) letter.scrollIntoView({behavior:'smooth', block:'nearest'});
+    });
+  </script>
+</body>
+</html>

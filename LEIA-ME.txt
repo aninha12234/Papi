@@ -1,0 +1,14 @@
+CARTINHA DIGITAL — GITHUB PAGES
+
+1. Extraia esta pasta do arquivo ZIP.
+2. Entre em https://github.com e crie um repositório novo.
+3. Dê um nome, por exemplo: cartinha-para-daddy
+4. Para publicar gratuitamente no GitHub Pages, escolha Public.
+5. Envie o arquivo index.html e a pasta assets (com ilustracao.jpg) para a raiz do repositório.
+6. Abra Settings > Pages.
+7. Em Build and deployment, escolha Deploy from a branch.
+8. Selecione a branch main e a pasta /(root), depois clique em Save.
+9. Aguarde a publicação. O GitHub mostrará o endereço da página nessa mesma seção.
+
+A página usa a ilustração enviada nesta conversa e abre/fecha a cartinha pelo botão.
+Como o repositório será público, não coloque dados pessoais ou conteúdo íntimo.
